@@ -12,40 +12,57 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body onload="start()">
     <script type="text/javascript">
     var gifts = 0;
     var number_u1 = 0;
+    var price_u1 = 10;
+    var gps = 0;
+
     function ongift() {
         gifts += 1;
         document.getElementById("gifts").innerHTML = gifts;
     };
     function onupgrade_1() {
-        if(gifts-10>=0){
+        if(gifts-price_u1>=0){
           number_u1 += 1;
-          gifts-= 10;
+          gps+=1;
+          gifts-= price_u1;
+          price_u1 += price_u1*0.1;
+          price_u1 = Math.round(price_u1);
           document.getElementById("number_u1").innerHTML = number_u1;
+          document.getElementById("price_u1").innerHTML = price_u1;
+          document.getElementById("gps").innerHTML = gps;
           document.getElementById("gifts").innerHTML = gifts;
         }
     };
+
+    function start() {
+      // your code here
+      gifts += gps;
+      document.getElementById("gifts").innerHTML = gifts;
+      setTimeout(start, 1000);
+    }
     </script>
 
 
 
-    <div class="container">
+    <div class="alert alert-info" role="alert"><h1 style="text-align: center;">PRE-ALPHA Version 0.000023</h1></div>
       <table width="100%">
         <tr>
-          <td width="50%">
+          <td width="10%">
+          <td width="40%">
             <h1>Gifts: <a id="gifts">0</a></h1>
             <img src="Gift.png" onClick="ongift()">
+            <h1>Gifts per second: <a id="gps">0</a></h1>
           </td>
           <td width="20%">
           </td>
           <td width="30%">
-            <h1 onClick="onupgrade_1()">Cursor: <a id="number_u1">0</a>&emsp;<img src="cursor.png" width="10%" ></h1>
+            <h3 onClick="onupgrade_1()">Cursor: <a id="number_u1">0</a>&emsp;<img src="cursor.png" width="10%" >&emsp;<a id="price_u1">10</a> Gifts</h3>
 
           </td>
         </tr>
-    </div>
+    <div class="alert alert-danger" role="alert" style="text-align: center;">Unstable and probably Buged</div>
 </body>
 </html>
