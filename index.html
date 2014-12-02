@@ -14,15 +14,19 @@
 
 <body>
     <script type="text/javascript">
-    var clicks = 0;
-    var clicks_u1 = 0;
-    function onClick() {
-        clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
+    var gifts = 0;
+    var number_u1 = 0;
+    function ongift() {
+        gifts += 1;
+        document.getElementById("gifts").innerHTML = gifts;
     };
-    function onClick_u1() {
-        clicks_u1 += 1;
-        document.getElementById("clicks_u1").innerHTML = clicks_u1;
+    function onupgrade_1() {
+        if(gifts-10>=0){
+          number_u1 += 1;
+          gifts-= 10;
+          document.getElementById("number_u1").innerHTML = number_u1;
+          document.getElementById("gifts").innerHTML = gifts;
+        }
     };
     </script>
 
@@ -32,13 +36,13 @@
       <table width="100%">
         <tr>
           <td width="50%">
-            <h1>Gifts: <a id="clicks">0</a></h1>
-            <img src="Gift.png" onClick="onClick()">
+            <h1>Gifts: <a id="gifts">0</a></h1>
+            <img src="Gift.png" onClick="ongift()">
           </td>
           <td width="20%">
           </td>
           <td width="30%">
-            <h1 onClick="onClick_u1()">Cursor: <a id="clicks_u1">0</a>&emsp;<img src="cursor.png" width="10%" ></h1>
+            <h1 onClick="onupgrade_1()">Cursor: <a id="number_u1">0</a>&emsp;<img src="cursor.png" width="10%" ></h1>
 
           </td>
         </tr>
