@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gift Clicker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gift Clicker">
+    <meta name="author" content="Pudzian">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var clicks = 0;
+    var clicks_u1 = 0;
+    function onClick() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    function onClick_u1() {
+        clicks_u1 += 1;
+        document.getElementById("clicks_u1").innerHTML = clicks_u1;
+    };
+    </script>
+
+
+
+    <div class="container">
+      <table width="100%">
+        <tr>
+          <td width="50%">
+            <h1>Gifts: <a id="clicks">0</a></h1>
+            <img src="Gift.png" onClick="onClick()">
+          </td>
+          <td width="20%">
+          </td>
+          <td width="30%">
+            <h1 onClick="onClick_u1()">Cursor: <a id="clicks_u1">0</a>&emsp;<img src="cursor.png" width="10%" ></h1>
+
+          </td>
+        </tr>
+    </div>
+</body>
+</html>
