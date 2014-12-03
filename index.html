@@ -130,7 +130,7 @@
       if (splits[7] != "") {
         price_u3 = parseInt(splits[7]);
       }
-    
+
     }
 
     function checkCookie() {
@@ -190,11 +190,14 @@
         +price_u3.toString(),1);
         bcl=0;
       }
+      document.getElementById("bcl").innerHTML = bcl;
       setTimeout(start, 1000);
     }
     </script>
 
-    <div class="alert alert-info" role="alert"><h1 style="text-align: center;">PRE-ALPHA Version 0.000023</h1></div>
+    <div class="alert alert-info" role="alert"><h1 style="text-align: center;">PRE-ALPHA Version 0.000023</h1>
+      Next auto saves in <a id="bcl">0</a>
+    </div>
     <h1 style="text-align: center;">Gift Clicker</h1>
     <div class="alert alert-danger" role="alert" style="text-align: center;">Unstable and probably Buged</div>
 
