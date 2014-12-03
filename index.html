@@ -110,7 +110,15 @@
       document.getElementById("gifts").innerHTML = gifts;
       if(bcl>10){
         console.log("save_gc",gifts,1);
-        setCookie("save_gc",gifts,1);
+        setCookie("save_gc",gifts.toString()+","
+        +gps.toString()
+        /*+","+number_u1.toString()+","
+        +number_u2.toString()+","
+        +number_u3.toString()+","
+        +number_u1.toString()+","
+        +number_u2.toString()+","
+        +number_u3.toString()*/
+        ,1);
         bcl=0;
       }
       setTimeout(start, 1000);
