@@ -101,6 +101,42 @@
       else {
         gps=0;
       }
+      if (splits[2] != "") {
+        number_u1 = parseInt(splits[2]);
+      }
+      else {
+        number_u1=0;
+      }
+      if (splits[3] != "") {
+        number_u2 = parseInt(splits[3]);
+      }
+      else {
+        number_u2=0;
+      }
+      if (splits[4] != "") {
+        number_u3 = parseInt(splits[4]);
+      }
+      else {
+        number_u3=0;
+      }
+      if (splits[5] != "") {
+        price_u1 = parseInt(splits[5]);
+      }
+      else {
+        price_u1=0;
+      }
+      if (splits[6] != "") {
+        price_u2 = parseInt(splits[6]);
+      }
+      else {
+        price_u2=0;
+      }
+      if (splits[7] != "") {
+        price_u3 = parseInt(splits[7]);
+      }
+      else {
+        price_u3=0;
+      }
     }
 
     function checkCookie() {
@@ -135,16 +171,21 @@
       document.getElementById("gifts").innerHTML = gifts;
       if(bcl>10){
         console.log("save_gc",gifts.toString()+","
-        +gps.toString(),1);
-        setCookie("save_gc",gifts.toString()+","
-        +gps.toString()
-        /*+","+number_u1.toString()+","
-        +number_u2.toString()+","
-        +number_u3.toString()+","
+        +gps.toString()+","
         +number_u1.toString()+","
         +number_u2.toString()+","
-        +number_u3.toString()*/
-        ,1);
+        +number_u3.toString()+","
+        +price_u1.toString()+","
+        +price_u2.toString()+","
+        +price_u3.toString(),1);
+        setCookie("save_gc",gifts.toString()+","
+        +gps.toString()+","
+        +number_u1.toString()+","
+        +number_u2.toString()+","
+        +number_u3.toString()+","
+        +price_u1.toString()+","
+        +price_u2.toString()+","
+        +price_u3.toString(),1);
         bcl=0;
       }
       setTimeout(start, 1000);
