@@ -86,6 +86,13 @@
         }
         return "";
     }
+
+    function splitCookie(cookie) {
+      var splits = cookie.split(",");
+      gifts = splits[0];
+      gps = splits[1];
+    }
+
     function checkCookie() {
         var user = getCookie("save_gc");
         if (user != "") {
@@ -97,7 +104,7 @@
     }
 
     function init() {
-      console.log(getCookie("save_gc"));
+      console.log(splitCookie(getCookie("save_gc"))+gifts+gps);
 
       checkCookie();
       start();
