@@ -89,8 +89,18 @@
 
     function splitCookie(cokie) {
       var splits = cokie.split(',');
-      gifts = parseInt(splits[0]);
-      gps = parseInt(splits[1]);
+      if (splits[0] != "") {
+        gifts = parseInt(splits[0]);
+      }
+      else {
+        gifts=0;
+      }
+      if (splits[1] != "") {
+        gps = parseInt(splits[1]);
+      }
+      else {
+        gps=0;
+      }
     }
 
     function checkCookie() {
