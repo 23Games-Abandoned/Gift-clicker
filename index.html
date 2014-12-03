@@ -150,7 +150,15 @@
     }
 
     function init() {
-      console.log(splitCookie(getCookie("save_gc")));
+      splitCookie(getCookie("save_gc"))
+      console.log(gifts.toString()+","
+      +gps.toString()+","
+      +number_u1.toString()+","
+      +number_u2.toString()+","
+      +number_u3.toString()+","
+      +price_u1.toString()+","
+      +price_u2.toString()+","
+      +price_u3.toString());
 
       checkCookie();
       document.getElementById("number_u1").innerHTML = number_u1;
