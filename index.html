@@ -147,15 +147,22 @@
     function checkCookie() {
         var user = getCookie("save_gc");
         if (user != "") {
-            gifts=parseInt(user);
+            splitCookie(user);
         }
         else {
-          gifts=0;
+          gifts = 0;
+          number_u1 = 0;
+          price_u1 = 10;
+          number_u2 = 0;
+          price_u2 = 50;
+          number_u3 = 0;
+          price_u3 = 100;
+          gps = 0;
         }
     }
 
     function init() {
-      splitCookie(getCookie("save_gc"));
+      //splitCookie(getCookie("save_gc"));
       console.log(getCookie("save_gc"));
       /*console.log(gifts.toString()+","
       +gps.toString()+","
