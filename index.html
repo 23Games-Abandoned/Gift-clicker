@@ -155,7 +155,8 @@
     }
 
     function init() {
-      splitCookie(getCookie("save_gc"))
+      splitCookie(getCookie("save_gc"));
+      console.log(getCookie("save_gc"));
       console.log(gifts.toString()+","
       +gps.toString()+","
       +number_u1.toString()+","
