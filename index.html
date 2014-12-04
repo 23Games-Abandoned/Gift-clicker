@@ -169,9 +169,9 @@
     function start() {
       // your code here
       gifts += gps;
-      bcl++;
+      bcl--;
       document.getElementById("gifts").innerHTML = gifts;
-      if(bcl>10){
+      if(bcl<0){
         console.log("save_gc",gifts.toString()+","
         +gps.toString()+","
         +number_u1.toString()+","
@@ -188,7 +188,7 @@
         +price_u1.toString()+","
         +price_u2.toString()+","
         +price_u3.toString(),1);
-        bcl=0;
+        bcl=10;
       }
       document.getElementById("bcl").innerHTML = bcl;
       setTimeout(start, 1000);
