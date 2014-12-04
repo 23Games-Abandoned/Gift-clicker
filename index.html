@@ -145,23 +145,25 @@
     }
 
     function resetCookie() {
-          setCookie("save_gc","0,0,0,0,0,10,50,100", 1)
-          gifts = 0;
-          number_u1 = 0;
-          price_u1 = 10;
-          number_u2 = 0;
-          price_u2 = 50;
-          number_u3 = 0;
-          price_u3 = 100;
-          gps = 0;
-          document.getElementById("number_u1").innerHTML = number_u1;
-          document.getElementById("price_u1").innerHTML = price_u1;
-          document.getElementById("number_u2").innerHTML = number_u2;
-          document.getElementById("price_u2").innerHTML = price_u2;
-          document.getElementById("number_u3").innerHTML = number_u3;
-          document.getElementById("price_u3").innerHTML = price_u3;
-          document.getElementById("gps").innerHTML = gps;
-          document.getElementById("gifts").innerHTML = gifts;
+          if (confirm("Are you sure about it? It will clear save permanently.") == true) {
+              setCookie("save_gc","0,0,0,0,0,10,50,100", 1)
+              gifts = 0;
+              number_u1 = 0;
+              price_u1 = 10;
+              number_u2 = 0;
+              price_u2 = 50;
+              number_u3 = 0;
+              price_u3 = 100;
+              gps = 0;
+              document.getElementById("number_u1").innerHTML = number_u1;
+              document.getElementById("price_u1").innerHTML = price_u1;
+              document.getElementById("number_u2").innerHTML = number_u2;
+              document.getElementById("price_u2").innerHTML = price_u2;
+              document.getElementById("number_u3").innerHTML = number_u3;
+              document.getElementById("price_u3").innerHTML = price_u3;
+              document.getElementById("gps").innerHTML = gps;
+              document.getElementById("gifts").innerHTML = gifts;
+          }
     }
 
     function checkCookie() {
