@@ -144,6 +144,18 @@
 
     }
 
+    function resetCookie() {
+          setCookie("save_gc","0,0,0,0,0,10,50,100", 1)
+          gifts = 0;
+          number_u1 = 0;
+          price_u1 = 10;
+          number_u2 = 0;
+          price_u2 = 50;
+          number_u3 = 0;
+          price_u3 = 100;
+          gps = 0;
+    }
+
     function checkCookie() {
         var user = getCookie("save_gc");
         if (user != "") {
@@ -240,6 +252,9 @@
 
       </table>
     <div class="alert alert-danger" role="alert" style="text-align: center;">Unstable and probably Buged</div>
+    <div class="alert alert-warning" role="alert" style="text-align: center;">Waring this will erase your progres
+    <button type="button" class="btn btn-danger" onClick="resetCookie()">Reset Cookie</button>
+    </div>
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
