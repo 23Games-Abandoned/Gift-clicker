@@ -234,6 +234,7 @@
     }
     </script>
 
+    <!--
     <div class="alert alert-info" role="alert" style="text-align: center;"><h1>PRE-ALPHA Version 0.000023</h1>
       Next auto saves in <a id="bcl">0</a>
     </div>
@@ -266,5 +267,58 @@
     </div>
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+-->
+<div class="container">
+      <div class="header">
+
+			<h1 style="text-align: center;">Gift Clicker</h1>
+			<h1 style="text-align: center;">PRE-ALPHA Version 0.000000000666</h1>
+		 <div class="alert alert-info" role="alert">
+      Next auto saves in <a id="bcl">0</a>
+    </div>
+	 <ul class="nav nav-pills pull-right">
+
+            <li role="presentation"><a href="github.com/23games">23Games</a></li>
+			<li role="presentation"><a href="github.com/koozil">koozil</a></li>
+          </ul>
+      </div>
+
+
+
+  <!--Tabelkę da się inaczej zrobić lub podmienić na panele, ale brakuje mi kawy-->
+  <!--@TODO- OGARNIANIE TABELI-->
+    <div class="row">
+  <div class="col-md-4"><table width="100%" >
+        <tr>
+          <td width="0%">
+          <td width="40%" style="text-align: center;">
+            <h1>Gifts: <a id="gifts">0</a></h1>
+            <img src="Gift.png" onClick="ongift()">
+            <h1>Gifts per second: <a id="gps">0</a></h1>
+          </td>
+        </tr>
+
+      </table></div>
+	   <div class="col-md-4"> </div>
+  <div class="col-md-4">  <table width="100%" >
+        <tr>
+
+
+          <td>
+            <h4 onClick="onupgrade_1()">Auto-Cursor: <a id="number_u1">0</a>&emsp;<img src="cursor.png" width="10%" >&emsp;<a id="price_u1">10</a> Gifts</h4>
+            <h4 onClick="onupgrade_2()">Elf Helper: <a id="number_u2">0</a>&emsp;<img src="elf.png" width="14%" >&emsp;<a id="price_u2">50</a> Gifts</h4>
+            <h4 onClick="onupgrade_3()">Gift Tree: <a id="number_u3">0</a>&emsp;<img src="tree.png" width="14%" >&emsp;<a id="price_u3">100</a> Gifts</h4>
+          </td>
+          <td width="0%"></td>
+        </tr>
+
+      </table></div>
+</div>
+
+
+
+    <div class="alert alert-danger" role="alert" style="text-align: center;">Unstable and probably Buged</div>
 </body>
 </html>
