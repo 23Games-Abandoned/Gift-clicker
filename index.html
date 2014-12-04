@@ -77,11 +77,23 @@
 
     function getCookie(cname) {
         var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1);
-            if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+        if (name != null) {
+          var ca = document.cookie.split(';');
+          for(var i=0; i<ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0)==' ') c = c.substring(1);
+              if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+          }
+        }
+        else{
+        setCookie("save_gc",gifts.toString()+","
+        +gps.toString()+","
+        +number_u1.toString()+","
+        +number_u2.toString()+","
+        +number_u3.toString()+","
+        +price_u1.toString()+","
+        +price_u2.toString()+","
+        +price_u3.toString(),1);
         }
         return "";
     }
