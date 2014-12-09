@@ -20,6 +20,8 @@
     var price_u2 = 50;
     var number_u3 = 0;
     var price_u3 = 100;
+    var number_u4 = 0;
+    var price_u4 = 1000;
     var gps = 0;
     var bcl=0;
 
@@ -68,6 +70,20 @@
       }
     };
 
+    function onupgrade_4() {
+      if(gifts-price_u4>=0){
+        number_u4 += 1;
+        gps+=20;
+        gifts-= price_u4;
+        price_u4 += price_u4*0.1;
+        price_u4 = Math.round(price_u4);
+        document.getElementById("number_u4").innerHTML = number_u4;
+        document.getElementById("price_u4").innerHTML = price_u4;
+        document.getElementById("gps").innerHTML = gps;
+        document.getElementById("gifts").innerHTML = gifts;
+      }
+    };
+
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -91,9 +107,12 @@
         +number_u1.toString()+","
         +number_u2.toString()+","
         +number_u3.toString()+","
+        +number_u4.toString()+","
         +price_u1.toString()+","
         +price_u2.toString()+","
-        +price_u3.toString(),1);
+        +price_u3.toString()+","
+        +price_u4.toString()
+        ,1);
         }
         return "";
     }
@@ -131,15 +150,25 @@
         number_u3=0;
       }
       if (splits[5] != "") {
-        price_u1 = parseInt(splits[5]);
+        number_u4 = parseInt(splits[5]);
+      }
+      else {
+        number_u4=0;
       }
 
       if (splits[6] != "") {
-        price_u2 = parseInt(splits[6]);
+        price_u1 = parseInt(splits[6]);
       }
 
       if (splits[7] != "") {
-        price_u3 = parseInt(splits[7]);
+        price_u2 = parseInt(splits[7]);
+      }
+
+      if (splits[8] != "") {
+        price_u3 = parseInt(splits[8]);
+      }
+      if (splits[9] != "") {
+        price_u4 = parseInt(splits[9]);
       }
 
     }
@@ -179,6 +208,8 @@
           price_u2 = 50;
           number_u3 = 0;
           price_u3 = 100;
+          number_u4 = 0;
+          price_u4 = 100;
           gps = 0;
         }
     }
@@ -202,6 +233,8 @@
       document.getElementById("price_u2").innerHTML = price_u2;
       document.getElementById("number_u3").innerHTML = number_u3;
       document.getElementById("price_u3").innerHTML = price_u3;
+      document.getElementById("number_u4").innerHTML = number_u4;
+      document.getElementById("price_u4").innerHTML = price_u4;
       document.getElementById("gps").innerHTML = gps;
       document.getElementById("gifts").innerHTML = gifts;
       start();
@@ -218,17 +251,23 @@
         +number_u1.toString()+","
         +number_u2.toString()+","
         +number_u3.toString()+","
+        +number_u4.toString()+","
         +price_u1.toString()+","
         +price_u2.toString()+","
-        +price_u3.toString(),1);
+        +price_u3.toString()+","
+        +price_u4.toString()
+        ,1);
         setCookie("save_gc",gifts.toString()+","
         +gps.toString()+","
         +number_u1.toString()+","
         +number_u2.toString()+","
         +number_u3.toString()+","
+        +number_u4.toString()+","
         +price_u1.toString()+","
         +price_u2.toString()+","
-        +price_u3.toString(),60);
+        +price_u3.toString()+","
+        +price_u4.toString()
+        ,60);
         bcl=10;
       }
       document.getElementById("bcl").innerHTML = bcl;
@@ -331,6 +370,14 @@
               &emsp;<a id="price_u3">100</a> Gifts</h4>
               </button>
             </tr>
+            <tr>
+            <button type="button" class="btn btn-default" onClick="onupgrade_4()"
+            style="text-align: center;" data-toggle="tooltip"
+            data-placement="top" title="Auto-cursor">
+            Gift Tree: <a id="number_u4">0</a>&emsp;<img src="factory.png" width="14%" >
+            &emsp;<a id="price_u4">100</a> Gifts</h4>
+            </button>
+          </tr>
 
           </td>
           <td width="0%"></td>
