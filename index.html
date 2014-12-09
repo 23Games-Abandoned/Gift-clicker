@@ -175,7 +175,7 @@
 
     function resetCookie() {
           if (confirm("Are you sure about it? It will clear save permanently.") == true) {
-              setCookie("save_gc","0,0,0,0,0,10,50,100", 1)
+              setCookie("save_gc","0,0,0,0,0,0,10,50,100,1000", 1)
               gifts = 0;
               number_u1 = 0;
               price_u1 = 10;
@@ -183,6 +183,8 @@
               price_u2 = 50;
               number_u3 = 0;
               price_u3 = 100;
+              number_u4 = 0;
+              price_u4 = 1000;
               gps = 0;
               document.getElementById("number_u1").innerHTML = number_u1;
               document.getElementById("price_u1").innerHTML = price_u1;
