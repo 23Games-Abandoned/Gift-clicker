@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gift Clicker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gift Clicker">
+    <meta name="author" content="Pudzian">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <script type="text/javascript">
+      var vol=100;
+      var num=10 ;
+      var proc="";
+      function volup() {
+          if(vol+num<=100){
+            vol+=num;
+            proc=vol.toString()+"%"
+            document.getElementById("vol").innerHTML = vol;
+            document.getElementById("op").style.width = proc;
+          }
+      };
+      function voldown() {
+          if(vol-num>=0){
+            vol-=num;
+            proc=vol.toString()+"%"
+            document.getElementById("vol").innerHTML = vol;
+            document.getElementById("op").style.width = proc;
+          }
+      };
+    </script>
+
+
+    <div class="col-md-12"><table>
+      <tr>
+        <td>
+          <button type="button" class="btn btn-default" onClick="volup()"
+           style="text-align: center;" data-toggle="tooltip"
+            data-placement="top" title="volume up">+</button>
+        </td>
+        <td>
+      <button type="button" class="btn btn-default" onClick="voldown()"
+       style="text-align: center;" data-toggle="tooltip"
+        data-placement="top" title="volume down">-</button>
+      </td>
+        <td>
+    <h1 class="alert alert-info" role="alert">volume: <y id="vol">100</y>%</h1>
+  </td>
+
+  </table>
+        <div class="progress">
+  <div id="op" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+
+  </div>
+</div>
+</body>
+</html>
